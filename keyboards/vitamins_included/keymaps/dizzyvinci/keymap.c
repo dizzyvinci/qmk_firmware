@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 //**DIZZYVINCI**
 enum layer_names {
-    _QWERTY,
+    _BASELAYER,
     _COLEMAK,
     _DVORAK,
     _LOWER,
@@ -10,7 +10,7 @@ enum layer_names {
 };
 
 enum custom_keycodes {
-  QWERTY = SAFE_RANGE,
+  BASELAYER = SAFE_RANGE,
   COLEMAK,
   DVORAK,
   LOWER,
@@ -20,7 +20,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-/* Qwerty
+/* BASELAYER
  * ,-----------------------------------------------------------------------------------.
  * | Esc  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Ctrl | GUI  |  Alt |MYLAYER|Lower |Space |Space |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
-[_QWERTY] = LAYOUT_ortho_4x12(
+[_BASELAYER] = LAYOUT_ortho_4x12(
   KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
   KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
@@ -112,9 +112,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* MYLAYER (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
- * |      |QWERTY |Colemk|Dvorak|      |      |      |      |      |      |      |      |
+ * |      |BASELAYER |Colemk|Dvorak|      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |Qwerty|Colemk|Dvorak|      |      |
+ * |      |      |      |      |      |      |      |BASELAYER|Colemk|Dvorak|      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_MYLAYER] =  LAYOUT_ortho_4x12(
   _______, KC_QUOT, KC_COMM, KC_P,  _______, _______, _______, _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, _______, _______, QWERTY,  COLEMAK, DVORAK,  _______, _______,
+  _______, _______, _______, _______, _______, _______, _______, BASELAYER,  COLEMAK, DVORAK,  _______, _______,
   _______, _______, _______, KC_HASH, KC_V, _______, _______, _______, _______, _______, _______, _______,
   _______, _______, _______, _______, _______, AU_OFF,  AU_ON,   _______, _______, _______, _______, UG_NEXT
 )
@@ -134,9 +134,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case QWERTY:
+    case BASELAYER:
       if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTY);
+        set_single_persistent_default_layer(_BASELAYER);
       }
       return false;
       break;

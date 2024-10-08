@@ -33,4 +33,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 SONG(DVORAK_SOUND), \
                                 SONG(COLEMAK_SOUND) \
                               }
+
+//Custom inserts:
+#define MIDI_ADVANCED                              
+
 #endif
