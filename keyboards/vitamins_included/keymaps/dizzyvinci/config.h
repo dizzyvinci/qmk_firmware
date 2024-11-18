@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Rev2: SPLIT_HAND_PIN B4
 
 #ifdef AUDIO_ENABLE
-  #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
+  #define DEFAULT_LAYER_SONGS { SONG(ODE_TO_JOY), \
                                 SONG(DVORAK_SOUND), \
                                 SONG(COLEMAK_SOUND) \
                               }
